@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+jar {
+  manifest {
+    attributes(
+      'Main-Class': 'haynes.ui.LoginUI'
+    )
+  }
+}
+
+mainClassName = 'haynes.ui.LoginUI'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.firebase:firebase-admin:6.13.0'
+    compile "org.bouncycastle:bcprov-jdk16:1.46", "org.bouncycastle:bcpg-jdk16:1.46", "org.bouncycastle:bcmail-jdk16:1.46", "org.bouncycastle:bctsp-jdk16:1.46"
+    compile 'org.bitcoinj:bitcoinj-core:0.15.7'
+    compile 'junit:junit:4.12'
+}
